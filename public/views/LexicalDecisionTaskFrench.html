@@ -1,0 +1,804 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My experiment</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jspsych.js"></script>
+    <script src="plugins/jspsych-text.js"></script>
+    <script src="plugins/jspsych-single-stim.js"></script>
+	<script src="plugins/jspsych-single-stim.js"></script>
+	<script src="plugins/jspsych-survey-text.js"></script>
+	<script src="plugins/jspsych-survey-multi-choice.js"></script>
+	<link href="css/jspsych.css" rel="stylesheet" type="text/css"></link>
+<style>
+.stimuli{
+font-size:30px;
+text-align:center;
+font-family:verdana;
+}
+.stimuli2{
+font-size:20px;
+text-align:center;
+font-family:verdana;
+}
+
+</style>
+	
+	</head>
+<body>
+</body>
+<script>
+var welcome_block={
+type:"survey-text",
+questions:["<p class='stimuli'>Bienvenue.</p>"+
+"<p class='stimuli'>Avant de commencer, si vous êtes étudiant à <b>Cambridge</b>, veuillez insérer votre <b>CRSid</b>.</p>"+
+"<p class='stimuli'>Si vous êtes étudiant dans une <b>autre</b> université, veuillez insérer le <b>nom</b> de votre université, suivi de vos <b>initiales</b>, par exemple <b>'SouthamptonBB'</b>.</p>",],
+};
+var welcome_block2={
+type:"text",
+text:"<p class='stimuli'>Cette expérience consiste en deux courtes épreuves, suivis d’un petit questionnaire.</p>"+
+"<p class='stimuli'>Pendant la durée des épreuves, veuillez vous assurer que vous êtes dans un environnement calme et sans distractions.</p>"+ 
+"<p class='stimuli2'>(Appuyez sur la touche espace pour commencer la première épreuve)</p>"
+};
+var instructions_block1={
+type:"text",
+text:"<p class='stimuli'> Dans cette première épreuve, vous verrez des séries de lettres, les séries seront séparées par une croix ‘+’.</p>"+ 
+"<p class='stimuli'>Essayez de cligner des yeux seulement lorsque vous voyez cette croix.</p>"+
+"<p class='stimuli2'>(Appuyez sur la touche espace pour continuer)</p>"
+};
+var instructions_block2={
+type:"text",
+text:"<p class='stimuli'>Votre but est de décider si chacune de ces séries sont un vrai mot en français, ou non.</p>"+
+"<p class='stimuli'>Ne vous inquiétez pas, ceci n’est pas un test d’orthographe ou de vocabulaire. Tous les mots français de cet exercice sont relativement connus.</p>"+ 
+"<p class='stimuli'>Ce qui est plus important est la rapidité et l’exactitude des réponses. Essayez de prendre vos décisions le plus rapidement et justement possible.</p>"+
+"<p class='stimuli2'>(Appuyez sur la touche espace pour continuer)</p>"
+};
+var instructions_block3={
+type:"text",
+text:"<p class='stimuli'>Placez vos doigts sur les touches ‘Z’ et ‘M’ du clavier.</p>"+
+"<p class='stimuli'>Pendant l’exercice, lorsque vous voyez un non-mot (mot non français), appuyez sur la touche ‘Z’ et lorsque vous voyez un vrai mot français, appuyez sur la touche ‘M’.</p>"+
+"<p class='stimuli2'>(Appuyez sur la touche 'M' pour continuer)</p>"
+};
+var instructions_block4={
+type:"text",
+text:"<p class='stimuli'>Pret? Appuyez sur la touche ‘M’ pour commencer.</p>"+
+"<p class='stimuli'>Rappel: Z = non mot (main gauche), M = vrai mot (main droite)!</p>"
+};
+
+var words= ["<p class='stimuli'>poison</p>","<p class='stimuli'>danger</p>","<p class='stimuli'>cousin</p>","<p class='stimuli'>nièce</p>","<p class='stimuli'>dessert</p>","<p class='stimuli'>engagement</p>","<p class='stimuli'>portrait</p>",
+"<p class='stimuli'>queue</p>","<p class='stimuli'>source</p>","<p class='stimuli'>ticket</p>","<p class='stimuli'>combat</p>","<p class='stimuli'>concept</p>","<p class='stimuli'>conclusion</p>","<p class='stimuli'>crime</p>","<p class='stimuli'>chèque</p>",
+"<p class='stimuli'>confusion</p>","<p class='stimuli'>continent</p>","<p class='stimuli'>division</p>","<p class='stimuli'>invasion</p>","<p class='stimuli'>laser</p>","<p class='stimuli'>restaurant</p>","<p class='stimuli'>talent</p>","<p class='stimuli'>tension</p>",
+"<p class='stimuli'>transport</p>","<p class='stimuli'>vision</p>","<p class='stimuli'>volume</p>","<p class='stimuli'>contact</p>","<p class='stimuli'>métal</p>","<p class='stimuli'>lapin</p>","<p class='stimuli'>bouclier</p>",
+"<p class='stimuli'>fromage</p>","<p class='stimuli'>tiroir</p>","<p class='stimuli'>hiver</p>","<p class='stimuli'>requin</p>","<p class='stimuli'>bougie</p>","<p class='stimuli'>poulet</p>","<p class='stimuli'>pomme</p>","<p class='stimuli'>feuille</p>",
+"<p class='stimuli'>sagesse</p>","<p class='stimuli'>couteau</p>","<p class='stimuli'>fenêtre</p>","<p class='stimuli'>oiseau</p>","<p class='stimuli'>déjeuner</p>","<p class='stimuli'>foule</p>","<p class='stimuli'>doigt</p>","<p class='stimuli'>sortie</p>",
+"<p class='stimuli'>casquette</p>","<p class='stimuli'>écrivain</p>","<p class='stimuli'>troupeau</p>","<p class='stimuli'>devinette</p>","<p class='stimuli'>coccinelle</p>","<p class='stimuli'>brindille</p>","<p class='stimuli'>grenouille</p>",
+"<p class='stimuli'>berceau</p>","<p class='stimuli'>soubrette</p>","<p class='stimuli'>ficelle</p>",
+];
+var fixation_trial={
+type: 'single-stim',
+stimulus: "<p class='stimuli'>+</p>",
+is_html: true,
+timing_response: 500,
+timing_post_trial: 0,
+choices: 'none'
+};
+var endofexperiment={
+type:"text",
+text:"<p class='stimuli'>Vous avez atteint la fin de l’épreuve 1.</p>"+
+"<p class='stimuli'>Lorsque vous êtes prêt, taper sur une touche du clavier pour commencer la deuxième épreuve.</p>"
+};
+var instructions_block5={
+type:"text",
+text:"<p class='stimuli'>Dans cette deuxième épreuve, vous verrez des séries de 11 images, une image après l’autre.</p>"+ 
+"<p class='stimuli'>Au cours de ces 11 images, une image se transformera graduellement en une autre.</p>"+
+"<p class='stimuli'>Appuyez sur la touche espace pour voir un exemple.</p>"
+};
+var example_block={
+type:"single-stim",
+stimulus:"img/Example.jpg",
+};
+var instructions_block6={
+type:"text",
+text: "<p class='stimuli'>La nature de la premiere image de la série vous sera donnée, ex.: « chien ».</p>"+
+"<p class='stimuli'>Votre but est de prédire l’image finale qui sera le résultat de la transformation de la première.</p>"+
+"<p class='stimuli2>Appuyez sur la touche espace pour continuer.</p>"
+};
+var instructions_block7={
+type:"text",
+text: "<p class='stimuli'>Après chaque image de la série, il vous sera demandé de prédire l’image finale (c’est-à-dire, ce que les images sont en train de devenir).</p>"+
+"<p class='stimuli'>Pour chaque image, appuyez sur la touche espace pour faire disparaitre l’image et faire apparaitre la case de réponse. Ecrivez votre réponse le plus rapidement possible.</p>"
+};
+var instructions_block8={
+type:"text",
+text:"<p class='stimuli'>Si vous n’avez aucune idée au départ, vous pouvez laisser la case de réponse vide.</p>"+
+"<p class='stimuli'>Prêt? Appuyez sur la touche espace pour voir la première image et commencer l’épreuve!</p>"
+};
+var apple1={
+type: "single-stim",
+stimulus: "img/apple1FR.jpg",
+};
+var apple2={
+type:"single-stim",
+stimulus:"img/apple2.jpg",
+};
+var apple2_response={
+type:"survey-text",
+questions: ["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple3={
+type:"single-stim",
+stimulus:"img/apple3.jpg",
+};
+var apple3_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple4={
+type:"single-stim",
+stimulus:"img/apple4.jpg",
+};
+var apple4_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple5={
+type:"single-stim",
+stimulus:"img/apple5.jpg",
+};
+var apple5_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple6={
+type:"single-stim",
+stimulus:"img/apple6.jpg",
+};
+var apple6_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple7={
+type:"single-stim",
+stimulus:"img/apple7.jpg",
+};
+var apple7_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple8={
+type:"single-stim",
+stimulus:"img/apple8.jpg",
+};
+var apple8_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple9={
+type:"single-stim",
+stimulus:"img/apple9.jpg",
+};
+var apple9_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple10={
+type:"single-stim",
+stimulus:"img/apple10.jpg",
+};
+var apple10_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var apple_answer={
+type:"text",
+text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la série suivante.</p>"
+};
+var apple11={
+type:"single-stim",
+stimulus:"img/apple11FR.jpg",
+};
+var horse1={
+type:"single-stim",
+stimulus:"img/horse1FR.jpg",
+};
+var horse2={
+type:"single-stim",
+stimulus:"img/horse2.jpg",
+};
+var horse2_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse3={
+type:"single-stim",
+stimulus:"img/horse3.jpg",
+};
+var horse3_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse4={
+type:"single-stim",
+stimulus:"img/horse4.jpg",
+};
+var horse4_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse5={
+type:"single-stim",
+stimulus:"img/horse5.jpg",
+};
+var horse5_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse6={
+type:"single-stim",
+stimulus:"img/horse6.jpg",
+};
+var horse6_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse7={
+type:"single-stim",
+stimulus:"img/horse7.jpg",
+};
+var horse7_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse8={
+type:"single-stim",
+stimulus:"img/horse8.jpg",
+};
+var horse8_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse9={
+type:"single-stim",
+stimulus:"img/horse9.jpg",
+};
+var horse9_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse10={
+type:"single-stim",
+stimulus:"img/horse10.jpg",
+};
+var horse10_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var horse_answer={
+type:"text",
+text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la série suivante.</p>"
+};
+var horse11={
+type:"single-stim",
+stimulus:"img/horse11FR.jpg",
+};
+var body1={
+type:"single-stim",
+stimulus:"img/body1FR.jpg",
+};
+var body2={
+type:"single-stim",
+stimulus:"img/body2.jpg",
+};
+var body2_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var body3={
+type:"single-stim",
+stimulus:"img/body3.jpg",
+};
+var body3_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var body4={
+type:"single-stim",
+stimulus:"img/body4.jpg",
+};
+var body4_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var body5={
+type:"single-stim",
+stimulus:"img/body5.jpg",
+};
+var body5_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var body6={
+type:"single-stim",
+stimulus:"img/body6.jpg",
+};
+var body6_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var body7={
+type:"single-stim",
+stimulus:"img/body7.jpg",
+};
+var body7_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var body8={
+type:"single-stim",
+stimulus:"img/body8.jpg",
+};
+var body8_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var body9={
+type:"single-stim",
+stimulus:"img/body9.jpg",
+};
+var body9_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var body10={
+type:"single-stim",
+stimulus:"img/body10.jpg",
+};
+var body10_response={
+type:"survey-text",
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
+};
+var body_answer={
+type:"text",
+text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la série suivante.</p>"
+};
+var body11={
+type:"single-stim",
+stimulus:"img/body11FR.jpg",
+};
+var lady1={
+type:"single-stim",
+stimulus:"img/lady1FR.jpg",
+};
+var lady2={
+type:"single-stim",
+stimulus:"img/lady2.jpg",
+};
+var lady2_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady3={
+type:"single-stim",
+stimulus:"img/lady3.jpg",
+};
+var lady3_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady4={
+type:"single-stim",
+stimulus:"img/lady4.jpg",
+};
+var lady4_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady5={
+type:"single-stim",
+stimulus:"img/lady5.jpg",
+};
+var lady5_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady6={
+type:"single-stim",
+stimulus:"img/lady6.jpg",
+};
+var lady6_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady7={
+type:"single-stim",
+stimulus:"img/lady7.jpg",
+};
+var lady7_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady8={
+type:"single-stim",
+stimulus:"img/lady8.jpg",
+};
+var lady8_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady9={
+type:"single-stim",
+stimulus:"img/lady9.jpg",
+};
+var lady9_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady10={
+type:"single-stim",
+stimulus:"img/lady10.jpg",
+};
+var lady10_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var lady_answer={
+type:"text",
+text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la dernière série.</p>"
+};
+var lady11={
+type:"single-stim",
+stimulus:"img/lady11FR.jpg",
+};
+var squir1={
+type:"single-stim",
+stimulus:"img/squir1FR.jpg",
+};
+var squir2={
+type:"single-stim",
+stimulus:"img/squir2.jpg",
+};
+var squir2_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir3={
+type:"single-stim",
+stimulus:"img/squir3.jpg",
+};
+var squir3_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir4={
+type:"single-stim",
+stimulus:"img/squir4.jpg",
+};
+var squir4_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir5={
+type:"single-stim",
+stimulus:"img/squir5.jpg",
+};
+var squir5_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir6={
+type:"single-stim",
+stimulus:"img/squir6.jpg",
+};
+var squir6_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir7={
+type:"single-stim",
+stimulus:"img/squir7.jpg",
+};
+var squir7_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir8={
+type:"single-stim",
+stimulus:"img/squir8.jpg",
+};
+var squir8_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir9={
+type:"single-stim",
+stimulus:"img/squir9.jpg",
+};
+var squir9_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir10={
+type:"single-stim",
+stimulus:"img/squir10.jpg",
+};
+var squir10_response={
+type:"survey-text",
+questions:["<p class='stimuli'>En quoi se transforme cette image? Si vous n’êtes pas sûr à ce stade, ou si votre réponse est la même que pour l’image précédente, laisser la case vide et cliquez sur « envoyer la réponse ».</p>",],
+};
+var squir_answer={
+type:"text",
+text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la fin de l'épreuve.</p>"
+};
+var squir11={
+type:"single-stim",
+stimulus:"img/squir11FR.jpg",
+};
+var endofexperiment2={
+type:"text",
+text:"<p class='stimuli'>Vous avez atteint la fin de l’expérience.</p>"+ 
+"<p class='stimuli'>Lorsque vous êtes prêt, appuyez sur la touche espace pour accéder au questionnaire final.</p>"
+};
+ var questionnaire1={
+  type:"survey-multi-choice",
+  horizontal: true,
+  questions:["<p class='stimuli'>Quelle variété d’anglais parlez-vous? </p>",],
+  options:[["<p class='stimuli2'>Anglais Britannique</p>", "<p class='stimuli2'>Anglais Américain</p>", "<p class='stimuli2'>Anglais Australien</p>","<p class='stimuli2'>Anglais Indien</p>","<p class='stimuli2'>Autre</p>",]],
+  };
+ var questionnaire2={
+ type: "survey-text",
+ questions:["<p class='stimuli'>Parlez-vous d’autres langues que l’anglais ou le français? Si non, écrivez ‘non’. Si oui, faites une liste et donnez leur une note entre 1 et 5 (1 étant niveau bas, 3 niveau compétent et 5 haut niveau)</p>",],
+ };
+var questionnaire3={
+type:"survey-multi-choice",
+horizontal: true,
+questions:["<p class='stimuli'>Quand avez-vous commencé à apprendre le français?</p>",],
+options:[["<p class='stimuli2'>Depuis la naissance</p>", "<p class='stimuli2'>en primaire</p>", "<p class='stimuli2'>au collège</p>", "<p class='stimuli2'>plus tard</p>",]],
+};
+var questionnaire4={
+type:"survey-multi-choice",
+horizontal:true,
+questions:["<p class='stimuli'>Quelle note donneriez-vous à votre niveau de français</p>",],
+options:[["<p class='stimuli'>1 (niveau bas)</p>","<p class='stimuli2'>2</p>","<p class='stimuli2'>3 (niveau compétent)</p>","<p class='stimuli2'>4</p>","<p class='stimuli2'>5 (haut niveau)</p>",]],
+};
+var questionnaire5={
+type:"survey-multi-choice",
+questions:["<p class='stimuli>Avez-vous eu des cours particuliers de français, par exemple à la maison ou en cours additionnels?</p>",],
+options:[["<p class='stimuli2'>Oui</p>","<p class='stimuli2'Non</p>",]],
+};
+var questionnaire6={
+type:"survey-multi-choice",
+questions:["<p class='stimuli'>A quelle fréquence êtes-vous exposé au français (écoute ou lecture)?</p>",],
+options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
+};
+var questionnaire7={
+type:"survey-multi-choice",
+horizontal:["<p class='stimuli'>A quelle fréquence utilisez-vous le français (parlé ou écrit)?</p>",],
+options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
+};
+var questionnaire8={
+ type: "survey-multi-choice",
+ horizontal: true,
+ questions:["<p class='stimuli'>A quelle tranche d’âge appartenez-vous? </p>",],
+ options:[["<p class='stimuli2'>Moins de 18</p>","<p class='stimuli2'>18-25</p>","<p class='stimuli2'>26-30</p>","<p class='stimuli2'>31-35</p>","<p class='stimuli2'>36+</p>",]],
+ };
+var questionnaire9={
+type:"survey-multi-choice",
+horizontal:true,
+questions:["<p class='stimuli'>En quelle année d’université êtes-vous?</p>",],
+options:[["<p class'stimuli2'>Première année de licence</p>","<p class='stimuli2'>Deuxième année de licence</p>","<p class='stimuli2'>Troisième année de licence</p>","<p class='stimuli2'>Quatrième année de licence</p>", "<p class='stimuli2'>Etudiant en master</p>","<p class='stimuli2'>Etudiant en PhD</p>","<p class='stimuli2'>Diplômé de licence</p>","<p class='stimuli2'>Diplômé de master</p>","<p class='stimuli2'>Diplômé de PhD</p>",]]
+};
+ var questionnaire10={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>Comment qualifier votre vision? </p>",],
+ options:[["<p class='stimuli2'>Normale</p>","<p class='stimuli2'>Corrigée (porteur de lunettes)</p>","<p class='stimuli2'>Problèmes de vision</p>",]],
+ };
+ var questionnaire11={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>Quel est votre sexe? </p>"],
+ options:[["<p class='stimuli2'>Masculin</p>","<p class='stimuli2'>Féminin,</p>","<p class='stimuli2'>Autre</p>",]],
+ };
+ var questionnaire12={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>Etes-vous droitier ou gaucher?</p>",],
+ options:[["<p class'stimuli2'>Droitier</p>","<p class='stimuli2'>Gaucher</p>","<p class='stimuli2'>Ambidextre</p>",]],
+ };
+ var questionnaire13={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>Jouez-vous d’un instrument de musique?</p>",],
+ options:[["<p class='stimuli2>Oui</p>","<p class=stimuli2>Non</p>",]],
+ };
+ var questionnaire14={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>A quelle fréquence jouez-vous aux jeux vidéo?</p>",],
+ options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
+ };
+ var questionnaire15={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>A quelle fréquence faites-vous de l’exercice physique? </p>",],
+options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
+ };
+ var endofexperiment3={
+ type:"text",
+ text:"<p class='stimuli'>C’est la fin de l’épreuve. Merci beaucoup pour votre participation. Appuyez sur le lien ci-dessous pour finir.</p>",
+ }; 
+
+ var csvString = jsPsych.data.dataAsCSV();
+
+var timeline=[];
+timeline.push(welcome_block);
+timeline.push(welcome_block2);
+timeline.push(instructions_block1);
+timeline.push(instructions_block2);
+timeline.push(instructions_block3);
+timeline.push(instructions_block4);
+for(var i=0; i<words.length; i++){
+ timeline.push(fixation_trial);
+ timeline.push({
+ type: 'single-stim',
+ stimulus: words[i],
+ timing_response: 2000,
+ randomize_order:true,
+ is_html: true,
+ });
+}
+timeline.push(endofexperiment);
+ timeline.push(instructions_block5);
+ timeline.push(example_block);
+ timeline.push(instructions_block6);
+ timeline.push(instructions_block7);
+ timeline.push(instructions_block8);
+ timeline.push(apple1);
+ timeline.push(apple2);
+ timeline.push(apple2_response);
+ timeline.push(apple3);
+ timeline.push(apple3_response);
+ timeline.push(apple4);
+ timeline.push(apple4_response);
+ timeline.push(apple5);
+ timeline.push(apple5_response);
+ timeline.push(apple6);
+ timeline.push(apple6_response);
+ timeline.push(apple7);
+ timeline.push(apple7_response);
+ timeline.push(apple8);
+ timeline.push(apple8_response);
+ timeline.push(apple9);
+ timeline.push(apple9_response);
+ timeline.push(apple10);
+ timeline.push(apple10_response);
+ timeline.push(apple_answer);
+ timeline.push(apple11);
+ timeline.push(horse1);
+ timeline.push(horse2);
+ timeline.push(horse2_response);
+ timeline.push(horse3);
+ timeline.push(horse3_response);
+ timeline.push(horse4);
+ timeline.push(horse4_response);
+ timeline.push(horse5);
+ timeline.push(horse5_response);
+ timeline.push(horse6);
+ timeline.push(horse6_response);
+ timeline.push(horse7);
+ timeline.push(horse7_response);
+ timeline.push(horse8);
+ timeline.push(horse8_response);
+ timeline.push(horse9);
+ timeline.push(horse9_response);
+ timeline.push(horse10);
+ timeline.push(horse10_response);
+ timeline.push(horse_answer);
+ timeline.push(horse11);
+ timeline.push(body1);
+ timeline.push(body2);
+ timeline.push(body2_response);
+ timeline.push(body3);
+ timeline.push(body3_response);
+ timeline.push(body4);
+ timeline.push(body4_response);
+ timeline.push(body5);
+ timeline.push(body5_response);
+ timeline.push(body6);
+ timeline.push(body6_response);
+ timeline.push(body7);
+ timeline.push(body7_response);
+ timeline.push(body8);
+ timeline.push(body8_response);
+ timeline.push(body9);
+ timeline.push(body9_response);
+ timeline.push(body10);
+ timeline.push(body10_response);
+ timeline.push(body_answer);
+ timeline.push(body11);
+ timeline.push(lady1);
+ timeline.push(lady2);
+ timeline.push(lady2_response);
+ timeline.push(lady3);
+ timeline.push(lady3_response);
+ timeline.push(lady4);
+ timeline.push(lady4_response);
+ timeline.push(lady5);
+ timeline.push(lady5_response);
+ timeline.push(lady6);
+ timeline.push(lady6_response);
+ timeline.push(lady7);
+ timeline.push(lady7_response);
+ timeline.push(lady8);
+ timeline.push(lady8_response);
+ timeline.push(lady9);
+ timeline.push(lady9_response);
+ timeline.push(lady10);
+ timeline.push(lady10_response);
+ timeline.push(lady_answer);
+ timeline.push(lady11);
+ timeline.push(squir1);
+ timeline.push(squir2);
+ timeline.push(squir2_response);
+ timeline.push(squir3);
+ timeline.push(squir3_response);
+ timeline.push(squir4);
+ timeline.push(squir4_response);
+ timeline.push(squir5);
+ timeline.push(squir5_response);
+ timeline.push(squir6);
+ timeline.push(squir6_response);
+ timeline.push(squir7);
+ timeline.push(squir7_response);
+ timeline.push(squir8);
+ timeline.push(squir8_response);
+ timeline.push(squir9);
+ timeline.push(squir9_response);
+ timeline.push(squir10);
+ timeline.push(squir10_response);
+ timeline.push(squir_answer);
+ timeline.push(squir11);
+ timeline.push(endofexperiment2);
+ timeline.push(questionnaire1);
+ timeline.push(questionnaire2);
+ timeline.push(questionnaire3);
+ timeline.push(questionnaire4);
+ timeline.push(questionnaire5);
+ timeline.push(questionnaire6);
+ timeline.push(questionnaire7);
+ timeline.push(questionnaire8);
+ timeline.push(questionnaire9);
+ timeline.push(questionnaire10);
+ timeline.push(questionnaire11);
+ timeline.push(questionnaire12);
+ timeline.push(questionnaire13);
+ timeline.push(questionnaire14);
+ timeline.push(questionnaire15);
+ timeline.push(endofexperiment3);
+
+jsPsych.init({
+timeline:timeline,
+ on_finish: function() {
+    $.ajax({
+      type: "POST",
+      url: "/experiment-data",
+      data: JSON.stringify(jsPsych.data.getData()),
+      contentType: "application/json"
+    })
+    .done(function() {
+      window.location.href = "/finish";
+    })
+    .fail(function() {
+      alert("A problem occurred while writing to the database. Please contact the researcher for more information.")
+      window.location.href = "/";
+    })
+  }
+});
+</script>
+</html>
