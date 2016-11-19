@@ -34,8 +34,16 @@ app.get('/', function(request, response) {
     response.render('index.html');
 });
 
-app.get('/experiment', function(request, response) {
+app.get('/experiment1', function(request, response) {
     response.render('LexicalDecisionTaskFrench.html');
+});
+
+app.get('/experiment2', function(request, response) {
+    response.render('LexicalDecisionTaskMonolingual.html');
+});
+
+app.get('/experiment3', function(request, response) {
+    response.render('LexicalDecisionTaskSpanFrench.html');
 });
 
 app.get('/finish', function(request, response) {
