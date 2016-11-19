@@ -35,11 +35,11 @@ app.get('/', function(request, response) {
 });
 
 app.get('/experiment1', function(request, response) {
-    response.render('LexicalDecisionTaskFrench.html');
+    response.render('AttentionTask.html');
 });
 
 app.get('/experiment2', function(request, response) {
-    response.render('LexicalDecisionTaskMonolingual.html');
+    response.render('LexicalDecisionTaskFrench.html');
 });
 
 app.get('/experiment3', function(request, response) {
@@ -53,7 +53,7 @@ app.get('/finish', function(request, response) {
 app.post('/experiment-data', function(request, response){
     Entry.create({
         "data":request.body
-    });    
+    });
     response.end();
 })
 
