@@ -1,0 +1,29 @@
+#dropbox {
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	cursor: pointer;
+	height: 320px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+#dropbox span {
+	color: #cccccc;
+	font-size: 2em;
+	line-height: 320px;
+}
+
+#file-input {
+	display: none;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.8); 
+}

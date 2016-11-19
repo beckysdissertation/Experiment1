@@ -1,0 +1,151 @@
+* {
+	transition: all 0.25s ease-in-out 0s;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+html, body {
+	background-color: #fefefe;
+}
+
+body {
+	font-family: "Open Sans","Helvetica", sans-serif;
+	font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Roboto";
+}
+
+
+h2 {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+
+}
+
+a:focus, a:hover, a:active {
+	text-decoration: none;
+}
+
+p {
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 17px;
+	color: #101010;
+	text-align: justify;
+	vertical-align: baseline;
+	margin-bottom: 1em;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+time {
+	color: #a0a0a0;
+}
+
+pre {
+	background-color: #ffffff;
+	border: 1px solid #e7e7e7;
+}
+
+code {
+	white-space: pre-wrap;
+	background-color: #f8f8f8;
+    color: #777777;
+	font-family: monospace;
+}
+
+pre > code {
+	font-family: inherit;
+	white-space: pre;
+}
+
+blockquote {
+    word-wrap: break-word;
+}
+
+.navbar-default {
+	background-color: #333333;
+	border-color: #444444;
+}
+
+.navbar-default .navbar-brand {
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #eeeeee;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
+	color: #aaaaaa;
+}
+
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+	color: #aaaaaa;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+	background-color: #444444;
+	color: #ffffff;
+}
+
+.navbar-default .navbar-toggle, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border: none;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	background-color: #444444;
+}
+
+body > .container {
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+
+.col-lg-6, .col-lg-4 {
+    margin: 1em 0;
+}
+
+.col-lg-6 > .item-block,
+.col-lg-4 > .item-block {
+	background-color: #ffffff;
+	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.content {
+	word-wrap: break-word;
+}
+
+.content > p {
+	line-height: 1.8em;
+}
+
+.item-block p,
+.item-block .tags {
+	margin: 5px;
+	display: block;
+}
