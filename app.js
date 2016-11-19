@@ -35,15 +35,15 @@ app.get('/', function(request, response) {
 });
 
 app.get('/experiment1', function(request, response) {
-    response.render('AttentionTask.html');
-});
-
-app.get('/experiment2', function(request, response) {
     response.render('LexicalDecisionTaskFrench.html');
 });
 
-app.get('/experiment3', function(request, response) {
+app.get('/experiment2', function(request, response) {
     response.render('LexicalDecisionTaskSpanFrench.html');
+});
+
+app.get('/experiment3', function(request, response) {
+    response.render('AttentionTask.html');
 });
 
 app.get('/finish', function(request, response) {
