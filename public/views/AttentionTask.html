@@ -762,9 +762,21 @@ var csvString = jsPsych.data.dataAsCSV();
 
  jsPsych.init({
  timeline:timeline,
- on_finish:function(){
- jsPsych.data.displayData('csv');
- }
+ on_finish: function() {
+    $.ajax({
+      type: "POST",
+      url: "/experiment-data",
+      data: JSON.stringify(jsPsych.data.getData()),
+      contentType: "application/json"
+    })
+    .done(function() {
+      window.location.href = "/finish";
+    })
+    .fail(function() {
+      alert("A problem occurred while writing to the database. Please contact the researcher for more information.")
+      window.location.href = "/";
+    })
+  }
  });
 </script>
 </html>
