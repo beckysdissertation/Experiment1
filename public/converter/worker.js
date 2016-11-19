@@ -1,6 +1,10 @@
 function processFile(file) {
   var reader = new FileReaderSync();
-  var experiment = JSON.parse(reader.readAsText(file));
+  var text = reader.readAsText(file);
+  text.trim().split("\n").forEach(function (experiment) { processJSON(JSON.parse(experiment)) });
+}
+
+function processJSON(experiment) {
   var columns = Object.keys(experiment.data[0]);
   var csv = [columns.join(",") + "\n"];
   csv = csv.concat(experiment.data.map(function(row) {
@@ -13,7 +17,8 @@ function processFile(file) {
         return v.toString();
     }).join(',') + "\n";
   }));
-  return new Blob(csv, {type: "text/csv"});
+  blob = new Blob(csv, {type: "text/csv"});
+  postMessage({csv: blob});
 }
 
 onmessage = function (e) {
@@ -21,8 +26,7 @@ onmessage = function (e) {
 
   switch(data.action) {
     case "processFile":
-      var csv = processFile(data.file);
-      postMessage({csv: csv});
+      processFile(data.file);
       break;
   };
 };
