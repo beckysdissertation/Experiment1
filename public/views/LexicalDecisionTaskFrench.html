@@ -648,13 +648,15 @@ timeline.push(instructions_block2);
 timeline.push(instructions_block3);
 timeline.push(instructions_block4);
 for(var i=0; i<words.length; i++){
- timeline.push(fixation_trial);
  timeline.push({
- type: 'single-stim',
- stimulus: words[i],
- timing_response: 2000,
- randomize_order:true,
- is_html: true,
+ timeline: [ fixation_trial,
+   {
+   type: 'single-stim',
+   stimulus: words[i],
+   timing_response: 2000,
+   randomize_order:true,
+   is_html: true,
+   }]
  });
 }
 timeline.push(endofexperiment);
