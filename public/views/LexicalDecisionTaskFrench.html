@@ -712,9 +712,9 @@ var last_n = [-1, -1];
 while(total > 0) {
  var i = getRandomInt(0, total);
  var bucket = 0;
- for (; i < words[bucket].length; i -= words[bucket++].length);
+ for (; i >= words[bucket].length; i -= words[bucket++].length);
 
- if (last_two.map(function(b) { return b == bucket }).reduce(function(a,b) { return a && b },true))
+ if (last_n.map(function(b) { return b == bucket }).reduce(function(a,b) { return a && b },true))
    continue;
 
  last_n.shift();
