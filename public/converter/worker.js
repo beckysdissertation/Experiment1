@@ -1,10 +1,10 @@
 function processFile(file) {
   var reader = new FileReaderSync();
   var text = reader.readAsText(file);
-  text.trim().split("\n").forEach(function (experiment) { processJSON(JSON.parse(experiment)) });
+  text.trim().split("\n").forEach(function (experiment, i) { processJSON(JSON.parse(experiment), i) });
 }
 
-function processJSON(experiment) {
+function processJSON(experiment, i) {
   var columns = Object.keys(experiment.data[0]);
   var csv = [columns.join(",") + "\n"];
   csv = csv.concat(experiment.data.map(function(row) {
@@ -18,7 +18,7 @@ function processJSON(experiment) {
     }).join(',') + "\n";
   }));
   blob = new Blob(csv, {type: "text/csv"});
-  postMessage({csv: blob});
+  postMessage({csv: blob, name: "experiment" + i});
 }
 
 onmessage = function (e) {

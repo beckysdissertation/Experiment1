@@ -2,8 +2,8 @@ var worker = new Worker("worker.js");
 
 worker.onmessage = function (e) {
   var blob = e.data.csv;
-  var url = window.URL.createObjectURL(blob);
-  window.open(url);
+  var name = e.data.name;
+  saveAs(blob, name + '.csv');
 }
 
 var dropbox = document.getElementById("dropbox");
