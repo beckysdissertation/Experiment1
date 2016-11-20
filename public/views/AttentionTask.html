@@ -42,7 +42,7 @@ display: block;
 };
 var welcome_block2={
 type:"text",
-text:"<p class='stimuli'>For the duration of the tasks, please try to ensure that you are in a quiet environment without any distractions.</p>"+
+text:"<p class='stimuli'>For the duration of the tasks, please try to ensure that you are in a <b>quiet environment</b> without any distractions.</p>"+
 	"<p class='stimuli2'> Press <b>SPACE</b> to begin the first task.</p>"
   };
  var instructions_block={
@@ -65,6 +65,8 @@ var instructions_block3={
 type:"text",
 text: "<p class='stimuli'>After <b>each</b> of the pictures in the set, you'll be asked to predict the <b>final</b> image (i.e., what the pictures are gradually turning into).</p>"+
 "<p class='stimuli'>On each trial, press <b>SPACE</b> for the picture to disappear and an answer box to pop up. Please write your answer as quickly as possible.</p>"+
+var instructions_block4={
+type:"text",
 "<p class='stimuli'>If initially you have no idea what the picture is turning into, you can leave the answer box <b>blank</b>.</p>"+
 "<p class='stimuli'>Ready? Press <b>SPACE</b> to see the first picture and begin the task!</p>"
 };
@@ -323,91 +325,6 @@ var body11={
 type:"single-stim",
 stimulus:"img/body11.jpg",
 };
-var rat1={
-type:"single-stim",
-stimulus:"img/rat11.jpg",
-};
-var rat2={
-type:"single-stim",
-stimulus:"img/rat10.jpg",
-};
-var rat2_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat3={
-type:"single-stim",
-stimulus:"img/rat9.jpg",
-};
-var rat3_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat4={
-type:"single-stim",
-stimulus:"img/rat8.jpg",
-};
-var rat4_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat5={
-type:"single-stim",
-stimulus:"img/rat7.jpg",
-};
-var rat5_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat6={
-type:"single-stim",
-stimulus:"img/rat6.jpg",
-};
-var rat6_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat7={
-type:"single-stim",
-stimulus:"img/rat5.jpg",
-};
-var rat7_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat8={
-type:"single-stim",
-stimulus:"img/rat4.jpg",
-};
-var rat8_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat9={
-type:"single-stim",
-stimulus:"img/rat3.jpg",
-};
-var rat9_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat10={
-type:"single-stim",
-stimulus:"img/rat2.jpg",
-};
-var rat10_response={
-type:"survey-text",
-questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
-};
-var rat_answer={
-type:"text",
-text:"<p class='stimuli'>Please press <b>SPACE</b> to find out the identity of the final image in this picture set.</p>"+
-"<p class='stimuli'>Afterwards, press <b>SPACE</b> again to continue to the next set of pictures.</p>",
-};
-var rat11={
-type:"single-stim",
-stimulus:"img/rat1.jpg",
-};
 var lady1={
 type:"single-stim",
 stimulus:"img/lady1.jpg",
@@ -591,7 +508,7 @@ text:"<p class='stimuli'>You have reached the end of the experiment.</p>"+
   };
  var questionnaire2={
  type: "survey-text",
- questions:["<p class='stimuli'>Do you speak any other languages apart from English? If yes, please list these languages and rate your proficiency in each on a scale of 1 to 5 (1 being 'low', 3 being 'competent' and 5 being 'high'). If no, please write 'N/A'.</p>",],
+ questions:["<p class='stimuli'>Do you speak any other languages apart from English? If no, please write 'no'. If yes, please list these languages and rate your proficiency in each one, on a scale of 1 to 5 - 1 being 'low', 3 being 'competent', and 5 being 'high'. (e.g. French = 2, German = 1).</p>",],
  };
  var questionnaire3={
  type: "survey-multi-choice",
@@ -600,16 +517,46 @@ text:"<p class='stimuli'>You have reached the end of the experiment.</p>"+
  options:[["<p class='stimuli2'>Under 18</p>","<p class='stimuli2'>18-25</p>","<p class='stimuli2'>26-30</p>","<p class='stimuli2'>31-35</p>","<p class='stimuli2'>36+</p>",]],
  };
  var questionnaire4={
+ type: "survey-multi-choice",
+ horizontal: true,
+ questions:["<p class='stimuli'>What year of university are you in?</p>",],
+ options:[["<p class='stimuli2'>Completed undergraduate degree</p>","<p class='stimuli2'>Completed masters</p>","<p class='stimuli2'>Completed PhD</p>","<p class='stimuli2'>First year undergraduate</p>","<p class='stimuli2'>Second year undergraduate</p>","<p class='stimuli2'>Third year undergraduate</p>","<p class='stimuli2'>Fourth year undergraduate</p>","<p class='stimuli2'>Studying for Masters</p>","<p class='stimuli2'>Studying for PhD</p>",]],
+ };
+ var questionnaire5={
  type:"survey-multi-choice",
  horizontal:true,
  questions:["<p class='stimuli'>How would you rate your vision?</p>",],
  options:[["<p class='stimuli2'>Normal</p>","<p class='stimuli2'>Corrected-to-normal(wear glasses)</p>","<p class='stimuli2'>Some problems with vision</p>",]],
  };
- var questionnaire5={
+ var questionnaire6={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>What is your sex?</p>"],
+ questions:["<p class='stimuli'>What is your sex?</p>",],
  options:[["<p class='stimuli2'>Male</p>","<p class='stimuli2'>Female</p>","<p class='stimuli2'>Other</p>",]],
+ };
+ var questionnaire7={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>Are you left or right handed?</p>",],
+ options:[["<p class='stimuli2'>Left</p>","<p class='stimuli2'> Right </p>", "<p class='stimuli2'>Ambidextrous</p>",]],
+ }
+ var questionnaire8={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>Do you play a musical instrument?</p>",],
+ options:[["<p class='stimuli2'>Yes</p>","<p class='stimuli2'>No</p>",]],
+ };
+ var questionnaire9={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class='stimuli'>How often do you play video games?</p>",],
+ options:[["<p class='stimuli2'>Never</p>","<p class='stimuli2'>Rarely</p>","<p class='stimuli2'>Sometimes</p>","<p class='stimuli2'>Often</p>","<p class='stimuli2'>Very often</p>",]],
+ };
+ var questionnaire10={
+ type:"survey-multi-choice",
+ horizontal:true,
+ questions:["<p class=stimuli>How often do you take part in sustained exercise?</p>",],
+ options:[["<p class='stimuli2'>Never</p>","<p class='stimuli2'>Rarely</p>","<p class='stimuli2'>Sometimes</p>","<p class='stimuli2'>Often</p>","<p class='stimuli2'>Very often</p>",]],
  };
  var endofexperiment2={
  type:"text",
@@ -626,6 +573,7 @@ var csvString = jsPsych.data.dataAsCSV();
  timeline.push(example_block);
  timeline.push(instructions_block2);
  timeline.push(instructions_block3);
+ timeline.push(instructions_block4);
  timeline.push(apple1);
  timeline.push(apple2);
  timeline.push(apple2_response);
@@ -689,27 +637,6 @@ var csvString = jsPsych.data.dataAsCSV();
  timeline.push(body10_response);
  timeline.push(body_answer);
  timeline.push(body11);
- timeline.push(rat1);
- timeline.push(rat2);
- timeline.push(rat2_response);
- timeline.push(rat3);
- timeline.push(rat3_response);
- timeline.push(rat4);
- timeline.push(rat4_response);
- timeline.push(rat5);
- timeline.push(rat5_response);
- timeline.push(rat6);
- timeline.push(rat6_response);
- timeline.push(rat7);
- timeline.push(rat7_response);
- timeline.push(rat8);
- timeline.push(rat8_response);
- timeline.push(rat9);
- timeline.push(rat9_response);
- timeline.push(rat10);
- timeline.push(rat10_response);
- timeline.push(rat_answer);
- timeline.push(rat11);
  timeline.push(lady1);
  timeline.push(lady2);
  timeline.push(lady2_response);
@@ -758,6 +685,11 @@ var csvString = jsPsych.data.dataAsCSV();
  timeline.push(questionnaire3);
  timeline.push(questionnaire4);
  timeline.push(questionnaire5);
+ timeline.push(questionnaire6);
+ timeline.push(questionnaire7);
+ timeline.push(questionnaire8);
+ timeline.push(questionnaire9);
+ timeline.push(questionnaire10);
  timeline.push(endofexperiment2);
 
  jsPsych.init({
