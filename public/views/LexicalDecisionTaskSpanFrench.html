@@ -736,7 +736,7 @@ while(total > 0) {
  last_n.shift();
  last_n.push(bucket);
 
- var word = words[bucket].shift();
+ var word = words[bucket].splice(i, 1)[0];
 
  timeline.push({
  timeline: [ fixation_trial,
