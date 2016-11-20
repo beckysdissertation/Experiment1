@@ -198,8 +198,8 @@ var fixation_trial={
 type: 'single-stim',
 stimulus: "<p class='stimuli'>+</p>",
 is_html: true,
-timing_response: 500,
-timing_post_trial: 0,
+timing_response: 800,
+timing_post_trial: 300,
 choices: 'none'
 };
 var endofexperiment={
@@ -800,7 +800,8 @@ while(total > 0) {
    {
    type: 'single-stim',
    stimulus: '<p class="stimuli">' + word + '</p>',
-   timing_response: 2000,
+   timing_response: 5000,
+   timing_post_trial: 700,
    is_html: true,
    }]
  });
