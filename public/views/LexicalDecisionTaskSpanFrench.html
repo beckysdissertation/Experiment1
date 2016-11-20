@@ -34,6 +34,12 @@ display: block;
 <body>
 </body>
 <script>
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 var welcome_block={
 type:"survey-text",
 questions:["<p class='stimuli'>Bienvenue.</p>"+
@@ -71,14 +77,66 @@ text:"<p class='stimuli'>Pret? Appuyez sur la touche <b>‘M’</b> pour commenc
 "<p class='stimuli'>Rappel: <b>Z</b> = <b>non mot</> (main <b>gauche</b>), <b>M</b> = <b>vrai</b> mot (main <b>droite</b>)!</p>"
 };
 
-var words= ["<p class='stimuli'>poison</p>","<p class='stimuli'>danger</p>","<p class='stimuli'>cousin</p>","<p class='stimuli'>nièce</p>","<p class='stimuli'>dessert</p>","<p class='stimuli'>engagement</p>","<p class='stimuli'>portrait</p>",
-"<p class='stimuli'>queue</p>","<p class='stimuli'>source</p>","<p class='stimuli'>ticket</p>","<p class='stimuli'>combat</p>","<p class='stimuli'>concept</p>","<p class='stimuli'>conclusion</p>","<p class='stimuli'>crime</p>","<p class='stimuli'>chèque</p>",
-"<p class='stimuli'>confusion</p>","<p class='stimuli'>continent</p>","<p class='stimuli'>division</p>","<p class='stimuli'>invasion</p>","<p class='stimuli'>laser</p>","<p class='stimuli'>restaurant</p>","<p class='stimuli'>talent</p>","<p class='stimuli'>tension</p>",
-"<p class='stimuli'>transport</p>","<p class='stimuli'>vision</p>","<p class='stimuli'>volume</p>","<p class='stimuli'>contact</p>","<p class='stimuli'>métal</p>","<p class='stimuli'>lapin</p>","<p class='stimuli'>bouclier</p>",
-"<p class='stimuli'>fromage</p>","<p class='stimuli'>tiroir</p>","<p class='stimuli'>hiver</p>","<p class='stimuli'>requin</p>","<p class='stimuli'>bougie</p>","<p class='stimuli'>poulet</p>","<p class='stimuli'>pomme</p>","<p class='stimuli'>feuille</p>",
-"<p class='stimuli'>sagesse</p>","<p class='stimuli'>couteau</p>","<p class='stimuli'>fenêtre</p>","<p class='stimuli'>oiseau</p>","<p class='stimuli'>déjeuner</p>","<p class='stimuli'>foule</p>","<p class='stimuli'>doigt</p>","<p class='stimuli'>sortie</p>",
-"<p class='stimuli'>casquette</p>","<p class='stimuli'>écrivain</p>","<p class='stimuli'>troupeau</p>","<p class='stimuli'>devinette</p>","<p class='stimuli'>coccinelle</p>","<p class='stimuli'>brindille</p>","<p class='stimuli'>grenouille</p>",
-"<p class='stimuli'>berceau</p>","<p class='stimuli'>soubrette</p>","<p class='stimuli'>ficelle</p>",
+var words= [
+// cognates
+["poison",
+"danger",
+"cousin",
+"nièce",
+"dessert",
+"engagement",
+"portrait",
+"queue",
+"source",
+"ticket",
+"combat",
+"concept",
+"conclusion",
+"crime",
+"chèque",
+"confusion",
+"continent",
+"division",
+"invasion",
+"laser",
+"restaurant",
+"talent",
+"tension",
+"transport",
+"vision",
+"volume",
+"contact",
+"métal"],
+// non-cognates
+["lapin",
+"bouclier",
+"fromage",
+"tiroir",
+"hiver",
+"requin",
+"bougie",
+"poulet",
+"pomme",
+"feuille",
+"sagesse",
+"couteau",
+"fenêtre",
+"oiseau",
+"déjeuner",
+"foule",
+"doigt",
+"sortie"],
+// non-words? (they don't seem like that...)
+["casquette",
+"écrivain",
+"troupeau",
+"devinette",
+"coccinelle",
+"brindille",
+"grenouille",
+"berceau",
+"soubrette",
+"ficelle"]
 ];
 var fixation_trial={
 type: 'single-stim',
@@ -663,16 +721,37 @@ timeline.push(instructions_block1);
 timeline.push(instructions_block2);
 timeline.push(instructions_block3);
 timeline.push(instructions_block4);
-for(var i=0; i<words.length; i++){
- timeline.push(fixation_trial);
+
+// pseudo randomization of word order
+var total = words.map(function(c){return c.length}).reduce(function(a,b){return a+b},0);
+var last_n = [-1, -1];
+while(total > 0) {
+ var i = getRandomInt(0, total);
+ var bucket = 0;
+ for (; i >= words[bucket].length; i -= words[bucket++].length);
+
+ if (last_n.map(function(b) { return b == bucket }).reduce(function(a,b) { return a && b },true))
+   continue;
+
+ last_n.shift();
+ last_n.push(bucket);
+
+ var word = words[bucket].shift();
+
  timeline.push({
- type: 'single-stim',
- stimulus: words[i],
- timing_response: 2000,
- randomize_order:true,
- is_html: true,
+ timeline: [ fixation_trial,
+   {
+   type: 'single-stim',
+   stimulus: '<p class="stimuli">' + word + '</p>',
+   timing_response: 2000,
+   is_html: true,
+   }]
  });
+ console.log(word);
+
+ total = words.map(function(c){return c.length}).reduce(function(a,b){return a+b},0);
 }
+
 timeline.push(endofexperiment);
  timeline.push(instructions_block5);
  timeline.push(example_block);
