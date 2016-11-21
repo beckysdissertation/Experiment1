@@ -77,7 +77,7 @@ text:"<p class='stimuli'>Pret? Appuyez sur la touche <b>‘M’</b> pour commenc
 };
 
 var words= [
-// cognates
+// words
 ["poison",
 "danger",
 "cousin",
@@ -105,9 +105,8 @@ var words= [
 "vision",
 "volume",
 "contact",
-"métal"],
-// non-cognates
-["lapin",
+"métal",
+"lapin",
 "bouclier",
 "fromage",
 "tiroir",
@@ -192,7 +191,7 @@ var words= [
 "inferné",
 "exacé",
 "élame",
-],
+]
 ];
 var fixation_trial={
 type: 'single-stim',
@@ -226,7 +225,7 @@ text: "<p class='stimuli'>La nature de la <b>premiere image</b> de la série vou
 var instructions_block7={
 type:"text",
 text: "<p class='stimuli'>Après <b>chaque image</b> de la série, il vous sera demandé de <b>prédire l’image finale</b> (c’est-à-dire, ce que les images sont <b>en train de devenir</b>).</p>"+
-"<p class='stimuli'>Pour chaque image, appuyez sur la touche espace pour faire disparaitre l’image et faire apparaitre la case de réponse. Ecrivez votre réponse le plus rapidement possible.</p>"+
+"<p class='stimuli'>Pour <b>chaque</b> image, appuyez sur la touche <b>espace</b> pour faire disparaitre l’image et faire apparaitre la <b>case de réponse</b>. Ecrivez votre réponse le <b>plus rapidement possible</b>.</p>"+
 "<p class='stimuli2'>Appuyez sur la touche <b>espace</b> pour continuer.</p>",
 };
 var instructions_block8={
@@ -313,7 +312,7 @@ questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous
 var apple_answer={
 type:"text",
 text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la série suivante.</p>"
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la série suivante.</p>"
 };
 var apple11={
 type:"single-stim",
@@ -398,7 +397,7 @@ questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous
 var horse_answer={
 type:"text",
 text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la série suivante.</p>"
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la série suivante.</p>"
 };
 var horse11={
 type:"single-stim",
@@ -483,7 +482,7 @@ questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous
 var body_answer={
 type:"text",
 text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la série suivante.</p>"
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la série suivante.</p>"
 };
 var body11={
 type:"single-stim",
@@ -568,7 +567,7 @@ questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous
 var lady_answer={
 type:"text",
 text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la dernière série.</p>"
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la dernière série.</p>"
 };
 var lady11={
 type:"single-stim",
@@ -653,7 +652,7 @@ questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous
 var squir_answer={
 type:"text",
 text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche espace pour commencer la fin de l'épreuve.</p>"
+"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la fin de l'épreuve.</p>"
 };
 var squir11={
 type:"single-stim",
@@ -667,91 +666,91 @@ text:"<p class='stimuli'>Vous avez atteint la fin de l’expérience.</p>"+
  var questionnaire1={
   type:"survey-multi-choice",
   horizontal: true,
-  questions:["<p class='stimuli'>Quelle variété d’anglais parlez-vous? </p>",],
+  questions:["<p class='stimuli'>Quelle <b>variété d’anglais</b> parlez-vous? </p>",],
   options:[["<p class='stimuli2'>Anglais Britannique</p>", "<p class='stimuli2'>Anglais Américain</p>", "<p class='stimuli2'>Anglais Australien</p>","<p class='stimuli2'>Anglais Indien</p>","<p class='stimuli2'>Autre</p>",]],
   };
  var questionnaire2={
  type: "survey-text",
- questions:["<p class='stimuli'>Parlez-vous d’autres langues que l’anglais ou le français? Si non, écrivez ‘non’. Si oui, faites une liste et donnez leur une note entre 1 et 5, 1 étant niveau bas, 3 niveau compétent et 5 haut niveau. (Ex. l'espagnol = 2, l'allemand = 3).</p>",],
+ questions:["<p class='stimuli'>Parlez-vous <b>d’autres langues</b> que l’anglais ou le français? Si non, écrivez <b>‘non’</b>. Si oui, <b>faites une liste</b> et donnez leur une <b>note</b> entre 1 et 5, <b>1</b> étant <b>niveau bas</b>, <b>3 niveau compétent</b> et <b>5 haut niveau</b>. (Ex. l'espagnol = 2, l'allemand = 3).</p>",],
  };
 var questionnaire3={
 type:"survey-multi-choice",
 horizontal: true,
-questions:["<p class='stimuli'>Quand avez-vous commencé à apprendre le français?</p>",],
+questions:["<p class='stimuli'>Quand avez-vous commencé à apprendre <b>le français?</b></p>",],
 options:[["<p class='stimuli2'>Depuis la naissance</p>", "<p class='stimuli2'>en primaire</p>", "<p class='stimuli2'>au collège</p>", "<p class='stimuli2'>plus tard</p>",]],
 };
 var questionnaire4={
 type:"survey-multi-choice",
 horizontal:true,
-questions:["<p class='stimuli'>Quelle note donneriez-vous à votre niveau de français?</p>",],
+questions:["<p class='stimuli'>Quelle <b>note</b> donneriez-vous à votre <b>niveau</b> de <b>français</b>?</p>",],
 options:[["<p class='stimuli2'>1 (niveau bas)</p>","<p class='stimuli2'>2</p>","<p class='stimuli2'>3 (niveau compétent)</p>","<p class='stimuli2'>4</p>","<p class='stimuli2'>5 (haut niveau)</p>",]],
 };
 var questionnaire5={
 type:"survey-multi-choice",
-questions:["<p class='stimuli'>Avez-vous eu des cours particuliers de français, par exemple à la maison ou en cours additionnels?</p>",],
+questions:["<p class='stimuli'>Avez-vous eu des <b>cours particuliers</b> de <b>français</b>, par exemple à la maison ou en cours additionnels?</p>",],
 options:[["<p class='stimuli2'>Oui</p>","<p class='stimuli2'>Non</p>",]],
 };
 var questionnaire6={
 type:"survey-multi-choice",
-questions:["<p class='stimuli'>A quelle fréquence êtes-vous exposé au français (écoute ou lecture)?</p>",],
+questions:["<p class='stimuli'>A <b>quelle fréquence</b> êtes-vous exposé au <b>français</b> (écoute ou lecture)?</p>",],
 options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
 };
 var questionnaire7={
 type:"survey-multi-choice",
-horizontal:["<p class='stimuli'>A quelle fréquence utilisez-vous le français (parlé ou écrit)?</p>",],
+questions:["<p class='stimuli'>A <b>quelle fréquence</b> utilisez-vous <b>le français</b> (parlé ou écrit)?</p>",],
 options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
 };
 var questionnaire8={
  type: "survey-multi-choice",
  horizontal: true,
- questions:["<p class='stimuli'>A quelle tranche d’âge appartenez-vous? </p>",],
+ questions:["<p class='stimuli'>A quelle <b>tranche d’âge</b> appartenez-vous? </p>",],
  options:[["<p class='stimuli2'>Moins de 18</p>","<p class='stimuli2'>18-25</p>","<p class='stimuli2'>26-30</p>","<p class='stimuli2'>31-35</p>","<p class='stimuli2'>36+</p>",]],
  };
 var questionnaire9={
 type:"survey-multi-choice",
 horizontal:true,
-questions:["<p class='stimuli'>En quelle année d’université êtes-vous?</p>",],
+questions:["<p class='stimuli'>En quelle <b>année d’université</b> êtes-vous?</p>",],
 options:[["<p class'stimuli2'>Première année de licence</p>","<p class='stimuli2'>Deuxième année de licence</p>","<p class='stimuli2'>Troisième année de licence</p>","<p class='stimuli2'>Quatrième année de licence</p>", "<p class='stimuli2'>Etudiant en master</p>","<p class='stimuli2'>Etudiant en PhD</p>","<p class='stimuli2'>Diplômé de licence</p>","<p class='stimuli2'>Diplômé de master</p>","<p class='stimuli2'>Diplômé de PhD</p>",]]
 };
  var questionnaire10={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>Comment qualifier votre vision? </p>",],
+ questions:["<p class='stimuli'>Comment qualifier votre <b>vision</b>? </p>",],
  options:[["<p class='stimuli2'>Normale</p>","<p class='stimuli2'>Corrigée (porteur de lunettes)</p>","<p class='stimuli2'>Problèmes de vision</p>",]],
  };
  var questionnaire11={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>Quel est votre sexe? </p>"],
+ questions:["<p class='stimuli'>Quel est votre <b>sexe</b>? </p>"],
  options:[["<p class='stimuli2'>Masculin</p>","<p class='stimuli2'>Féminin,</p>","<p class='stimuli2'>Autre</p>",]],
  };
  var questionnaire12={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>Etes-vous droitier ou gaucher?</p>",],
+ questions:["<p class='stimuli'>Etes-vous <b>droitier</b> ou <b>gaucher</b>?</p>",],
  options:[["<p class'stimuli2'>Droitier</p>","<p class='stimuli2'>Gaucher</p>","<p class='stimuli2'>Ambidextre</p>",]],
  };
  var questionnaire13={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>Jouez-vous d’un instrument de musique?</p>",],
- options:[["<p class='stimuli2>Oui</p>","<p class=stimuli2>Non</p>",]],
+ questions:["<p class='stimuli'>Jouez-vous d’un <b>instrument de musique</b>?</p>",],
+ options:[["<p class='stimuli2'>Oui</p>","<p class='stimuli2'>Non</p>",]],
  };
  var questionnaire14={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>A quelle fréquence jouez-vous aux jeux vidéo?</p>",],
+ questions:["<p class='stimuli'>A <b>quelle fréquence</b> jouez-vous aux <b>jeux vidéo?</b></p>",],
  options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
  };
  var questionnaire15={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>A quelle fréquence faites-vous de l’exercice physique? </p>",],
+ questions:["<p class='stimuli'>A <b>quelle fréquence</b> faites-vous de <b>l’exercice physique</b>? </p>",],
 options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
  };
  var endofexperiment3={
  type:"text",
- text:"<p class='stimuli'>C’est la fin de l’épreuve. Merci beaucoup pour votre participation. Appuyez sur le lien ci-dessous pour finir.</p>",
+ text:"<p class='stimuli'>C’est la fin de l’épreuve. Merci beaucoup pour votre participation.</p>",
  }; 
 
 var timeline=[];
@@ -764,7 +763,7 @@ timeline.push(instructions_block4);
 
 // pseudo randomization of word order
 var total = words.map(function(c){return c.length}).reduce(function(a,b){return a+b},0);
-var last_n = [-1, -1];
+var last_n = [-1, -1, -1];
 while(total > 0) {
  var i = getRandomInt(0, total);
  var bucket = 0;
