@@ -18,8 +18,14 @@ function processJSON(experiment, i) {
         return v.toString();
     }).join(',') + "\n";
   }));
+
+  var friendlyName = null;
+  try {
+    friendlyName = JSON.parse(experiment.data[0].responses).Q0;
+  } catch (e) {}
+
   blob = new Blob(csv, {type: "text/csv"});
-  postMessage({csv: blob, name: "experiment" + i});
+  postMessage({csv: blob, name: "experiment" + i, friendlyName: friendlyName});
 }
 
 onmessage = function (e) {

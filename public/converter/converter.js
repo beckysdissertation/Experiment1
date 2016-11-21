@@ -3,14 +3,16 @@ var worker = new Worker("worker.js");
 worker.onmessage = function (e) {
   var blob = e.data.csv;
   var name = e.data.name + '.csv';
+  var friendlyName = e.data.friendlyName;
   var handler = function(e) { saveAs(blob, name); }
   var list = document.getElementById('output-list');
+  var title = name + ((friendlyName !== undefined && friendlyName !== null && friendlyName !== "") ? " - " + friendlyName : "");
 
   var item = document.createElement('button');
   item.setAttribute('type', 'button');
   item.setAttribute('class', 'list-group-item');
   item.onclick = handler;
-  item.appendChild(document.createTextNode(name));
+  item.appendChild(document.createTextNode(title));
   list.appendChild(item);
 }
 
