@@ -64,11 +64,12 @@ text: "<p class='stimuli'>The identity of the <b>first</b> picture in the set wi
 var instructions_block3={
 type:"text",
 text: "<p class='stimuli'>After <b>each</b> of the pictures in the set, you'll be asked to predict the <b>final</b> image (i.e., what the pictures are gradually turning into).</p>"+
-"<p class='stimuli'>On each trial, press <b>SPACE</b> for the picture to disappear and an answer box to pop up. Please write your answer as quickly as possible.</p>"+
+"<p class='stimuli'>On each trial, press <b>SPACE</b> for the picture to disappear and an answer box to pop up. Please write your answer as quickly as possible.</p>",
+};
 var instructions_block4={
 type:"text",
-"<p class='stimuli'>If initially you have no idea what the picture is turning into, you can leave the answer box <b>blank</b>.</p>"+
-"<p class='stimuli'>Ready? Press <b>SPACE</b> to see the first picture and begin the task!</p>"
+text:"<p class='stimuli'>If initially you have no idea what the picture is turning into, you can leave the answer box <b>blank</b>.</p>"+
+"<p class='stimuli'>Ready? Press <b>SPACE</b> to see the first picture and begin the task!</p>",
 };
 var apple1={
 type: "single-stim",
@@ -564,8 +565,6 @@ text:"<p class='stimuli'>You have reached the end of the experiment.</p>"+
  "<p class='stimuli2'>Please press space to finish.</p>",
  }; 
  
-var csvString = jsPsych.data.dataAsCSV();
-
  var timeline=[];
  timeline.push(welcome_block);
  timeline.push(welcome_block2);
