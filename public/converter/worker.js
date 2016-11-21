@@ -5,13 +5,14 @@ function processFile(file) {
 }
 
 function processJSON(experiment, i) {
-  var columns = Object.keys(experiment.data[0]);
+  var columns = new Set(Object.keys(experiment.data[0]));
+  experiment.data.forEach(function (row) { Object.keys(row).forEach(function (column) { columns.add(column) }) });
+  columns = [...columns];
   var csv = [columns.join(",") + "\n"];
   csv = csv.concat(experiment.data.map(function(row) {
     return columns.map(function(field) {
       var v = row[field];
       if (v === undefined) {
-        console.log("field " + field + " missing");
         return "";
       } else
         return v.toString();
