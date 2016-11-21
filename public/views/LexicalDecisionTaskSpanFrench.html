@@ -793,6 +793,8 @@ while(total > 0) {
  last_n.push(bucket);
 
  var word = words[bucket].splice(i, 1)[0];
+ if (words[bucket].length == 0)
+   words.splice(bucket, 1);
 
  timeline.push({
  timeline: [ fixation_trial,
