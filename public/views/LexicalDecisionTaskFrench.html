@@ -205,39 +205,38 @@ choices: 'none'
 var endofexperiment={
 type:"text",
 text:"<p class='stimuli'>Vous avez atteint la fin de l’épreuve 1.</p>"+
-"<p class='stimuli'>Lorsque vous êtes prêt, taper sur une touche du clavier pour commencer la deuxième épreuve.</p>"
+"<p class='stimuli'>Lorsque vous êtes prêt, taper sur une touche du clavier pour commencer la deuxième épreuve, qui sera en ANGLAIS.</p>"
 };
 var instructions_block5={
 type:"text",
-text:"<p class='stimuli'>La durée de cette deuxième épreuve sera 8 minutes environs.</p>"+
-"<p class='stimuli'>Vous verrez des séries de <b>11 images</b>, une image après l’autre.</p>"+ 
-"<p class='stimuli'>Au cours de ces 11 images, une image <b>se transformera graduellement</b> en une <b>autre</b>.</p>"+
-"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour voir un <b>exemple</b>.</p>"
+text:"<p class='stimuli'>This next experiment will take around 8 minutes.</p>"+
+"<p class='stimuli'>You will see sets of 11 pictures, one picture at a time.</p>"+
+"<p class='stimuli'>Across these 11 pictures, one image will gradually <b>transform</b> into another.</p>"+
+"<p class='stimuli'> Press <b>SPACE</b> to see an example.<p>",
 };
 var example_block={
 type:"single-stim",
-stimulus:"img/ExampleFR.jpg",
+stimulus:"img/Example.jpg",
 };
 var instructions_block6={
 type:"text",
-text: "<p class='stimuli'>La nature de la <b>premiere image</b> de la série vous sera <b>donnée</b>, ex.: « chien ».</p>"+
-"<p class='stimuli'>Votre but est de <b>prédire l’image finale</b> qui sera le <b>résultat</b> de la <b>transformation</b> de la <b>première</b>.</p>"+
-"<p class='stimuli2'>Appuyez sur la touche <b>espace</b> pour continuer.</p>",
+text: "<p class='stimuli'>The identity of the <b>first</b> picture in the set will be given to you, e.g. 'dog'.</p>"+
+"<p class='stimuli'>Your job is to predict the <b>final</b> image that this picture is transforming into.</p>"+
+"<p class='stimuli2'> (Press <b>SPACE</b> to continue)<p>",
 };
 var instructions_block7={
 type:"text",
-text: "<p class='stimuli'>Après <b>chaque image</b> de la série, il vous sera demandé de <b>prédire l’image finale</b> (c’est-à-dire, ce que les images sont <b>en train de devenir</b>).</p>"+
-"<p class='stimuli'>Pour <b>chaque</b> image, appuyez sur la touche <b>espace</b> pour faire disparaitre l’image et faire apparaitre la <b>case de réponse</b>. Ecrivez votre réponse le <b>plus rapidement possible</b>.</p>"+
-"<p class='stimuli2'>Appuyez sur la touche <b>espace</b> pour continuer.</p>",
+text:"<p class='stimuli'>After <b>each</b> of the pictures in the set, you'll be asked to predict the <b>final</b> image (i.e., what the pictures are gradually turning into).</p>"+
+"<p class='stimuli'>On each trial, press <b>SPACE</b> for the picture to disappear and an answer box to pop up. Please write your answer as quickly as possible.</p>",
 };
 var instructions_block8={
 type:"text",
-text:"<p class='stimuli'>Si vous <b>n’avez aucune idée</b> au départ, vous pouvez laisser la case de réponse <b>vide</b>.</p>"+
-"<p class='stimuli'>Prêt? Appuyez sur la touche <b>espace</b> pour voir la première image et commencer l’épreuve!</p>"
+text:"<p class='stimuli'>If initially you have no idea what the picture is turning into, you can leave the answer box <b>blank</b>.</p>"+
+"<p class='stimuli'>Ready? Press <b>SPACE</b> to see the first picture and begin the task!</p>",
 };
 var apple1={
 type: "single-stim",
-stimulus: "img/apple1FR.jpg",
+stimulus: "img/apple1.jpg",
 };
 var apple2={
 type:"single-stim",
@@ -245,7 +244,7 @@ stimulus:"img/apple2.jpg",
 };
 var apple2_response={
 type:"survey-text",
-questions: ["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, laisser la case <b>vide</b> et cliquez sur <b>« submit answers »</b>.</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple3={
 type:"single-stim",
@@ -253,7 +252,7 @@ stimulus:"img/apple3.jpg",
 };
 var apple3_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple4={
 type:"single-stim",
@@ -261,7 +260,7 @@ stimulus:"img/apple4.jpg",
 };
 var apple4_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple5={
 type:"single-stim",
@@ -269,7 +268,7 @@ stimulus:"img/apple5.jpg",
 };
 var apple5_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple6={
 type:"single-stim",
@@ -277,7 +276,7 @@ stimulus:"img/apple6.jpg",
 };
 var apple6_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple7={
 type:"single-stim",
@@ -285,7 +284,7 @@ stimulus:"img/apple7.jpg",
 };
 var apple7_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple8={
 type:"single-stim",
@@ -293,7 +292,7 @@ stimulus:"img/apple8.jpg",
 };
 var apple8_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple9={
 type:"single-stim",
@@ -301,7 +300,7 @@ stimulus:"img/apple9.jpg",
 };
 var apple9_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple10={
 type:"single-stim",
@@ -309,20 +308,20 @@ stimulus:"img/apple10.jpg",
 };
 var apple10_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var apple_answer={
 type:"text",
-text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la série suivante.</p>"
+text:"<p class='stimuli'>Please press <b>SPACE</b> to find out the identity of the final image in this picture set.</p>"+
+"<p class='stimuli'>Afterwards, press <b>SPACE</b> again to continue to the next set of pictures.</p>",
 };
 var apple11={
 type:"single-stim",
-stimulus:"img/apple11FR.jpg",
+stimulus:"img/apple11.jpg",
 };
 var horse1={
 type:"single-stim",
-stimulus:"img/horse1FR.jpg",
+stimulus:"img/horse1.jpg",
 };
 var horse2={
 type:"single-stim",
@@ -330,7 +329,7 @@ stimulus:"img/horse2.jpg",
 };
 var horse2_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, laisser la case <b>vide</b> et cliquez sur <b>« submit answers »</b>.</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse3={
 type:"single-stim",
@@ -338,7 +337,7 @@ stimulus:"img/horse3.jpg",
 };
 var horse3_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse4={
 type:"single-stim",
@@ -346,7 +345,7 @@ stimulus:"img/horse4.jpg",
 };
 var horse4_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse5={
 type:"single-stim",
@@ -354,7 +353,7 @@ stimulus:"img/horse5.jpg",
 };
 var horse5_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse6={
 type:"single-stim",
@@ -362,7 +361,7 @@ stimulus:"img/horse6.jpg",
 };
 var horse6_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse7={
 type:"single-stim",
@@ -370,7 +369,7 @@ stimulus:"img/horse7.jpg",
 };
 var horse7_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse8={
 type:"single-stim",
@@ -378,7 +377,7 @@ stimulus:"img/horse8.jpg",
 };
 var horse8_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse9={
 type:"single-stim",
@@ -386,7 +385,7 @@ stimulus:"img/horse9.jpg",
 };
 var horse9_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse10={
 type:"single-stim",
@@ -394,20 +393,20 @@ stimulus:"img/horse10.jpg",
 };
 var horse10_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var horse_answer={
 type:"text",
-text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la série suivante.</p>"
+text:"<p class='stimuli'>Please press <b>SPACE</b> to find out the identity of the final image in this picture set.</p>"+
+"<p class='stimuli'>Afterwards, press <b>SPACE</b> again to continue to the next set of pictures.</p>",
 };
 var horse11={
 type:"single-stim",
-stimulus:"img/horse11FR.jpg",
+stimulus:"img/horse11.jpg",
 };
 var body1={
 type:"single-stim",
-stimulus:"img/body1FR.jpg",
+stimulus:"img/body1.jpg",
 };
 var body2={
 type:"single-stim",
@@ -415,7 +414,7 @@ stimulus:"img/body2.jpg",
 };
 var body2_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, laisser la case <b>vide</b> et cliquez sur <b>« submit answers »</b>.</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body3={
 type:"single-stim",
@@ -423,7 +422,7 @@ stimulus:"img/body3.jpg",
 };
 var body3_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body4={
 type:"single-stim",
@@ -431,7 +430,7 @@ stimulus:"img/body4.jpg",
 };
 var body4_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body5={
 type:"single-stim",
@@ -439,7 +438,7 @@ stimulus:"img/body5.jpg",
 };
 var body5_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body6={
 type:"single-stim",
@@ -447,7 +446,7 @@ stimulus:"img/body6.jpg",
 };
 var body6_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body7={
 type:"single-stim",
@@ -455,7 +454,7 @@ stimulus:"img/body7.jpg",
 };
 var body7_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body8={
 type:"single-stim",
@@ -463,7 +462,7 @@ stimulus:"img/body8.jpg",
 };
 var body8_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body9={
 type:"single-stim",
@@ -471,7 +470,7 @@ stimulus:"img/body9.jpg",
 };
 var body9_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body10={
 type:"single-stim",
@@ -479,20 +478,20 @@ stimulus:"img/body10.jpg",
 };
 var body10_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var body_answer={
 type:"text",
-text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la série suivante.</p>"
+text:"<p class='stimuli'>Please press <b>SPACE</b> to find out the identity of the final image in this picture set.</p>"+
+"<p class='stimuli'>Afterwards, press <b>SPACE</b> again to continue to the next set of pictures.</p>",
 };
 var body11={
 type:"single-stim",
-stimulus:"img/body11FR.jpg",
+stimulus:"img/body11.jpg",
 };
 var lady1={
 type:"single-stim",
-stimulus:"img/lady1FR.jpg",
+stimulus:"img/lady1.jpg",
 };
 var lady2={
 type:"single-stim",
@@ -500,7 +499,7 @@ stimulus:"img/lady2.jpg",
 };
 var lady2_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, laisser la case <b>vide</b> et cliquez sur <b>« submit answers »</b>.</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady3={
 type:"single-stim",
@@ -508,7 +507,7 @@ stimulus:"img/lady3.jpg",
 };
 var lady3_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady4={
 type:"single-stim",
@@ -516,7 +515,7 @@ stimulus:"img/lady4.jpg",
 };
 var lady4_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady5={
 type:"single-stim",
@@ -524,7 +523,7 @@ stimulus:"img/lady5.jpg",
 };
 var lady5_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady6={
 type:"single-stim",
@@ -532,7 +531,7 @@ stimulus:"img/lady6.jpg",
 };
 var lady6_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady7={
 type:"single-stim",
@@ -540,7 +539,7 @@ stimulus:"img/lady7.jpg",
 };
 var lady7_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady8={
 type:"single-stim",
@@ -548,7 +547,7 @@ stimulus:"img/lady8.jpg",
 };
 var lady8_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady9={
 type:"single-stim",
@@ -556,7 +555,7 @@ stimulus:"img/lady9.jpg",
 };
 var lady9_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady10={
 type:"single-stim",
@@ -564,20 +563,20 @@ stimulus:"img/lady10.jpg",
 };
 var lady10_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var lady_answer={
 type:"text",
-text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la dernière série.</p>"
+text:"<p class='stimuli'>Please press <b>SPACE</b> to find out the identity of the final image in this picture set.</p>"+
+"<p class='stimuli'>Afterwards, press <b>SPACE</b> again to continue to the final set of pictures.</p>",
 };
 var lady11={
 type:"single-stim",
-stimulus:"img/lady11FR.jpg",
+stimulus:"img/lady11.jpg",
 };
 var squir1={
 type:"single-stim",
-stimulus:"img/squir1FR.jpg",
+stimulus:"img/squir1.jpg",
 };
 var squir2={
 type:"single-stim",
@@ -585,7 +584,7 @@ stimulus:"img/squir2.jpg",
 };
 var squir2_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, laisser la case <b>vide</b> et cliquez sur <b>« submit answers »</b>.</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir3={
 type:"single-stim",
@@ -593,7 +592,7 @@ stimulus:"img/squir3.jpg",
 };
 var squir3_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir4={
 type:"single-stim",
@@ -601,7 +600,7 @@ stimulus:"img/squir4.jpg",
 };
 var squir4_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir5={
 type:"single-stim",
@@ -609,7 +608,7 @@ stimulus:"img/squir5.jpg",
 };
 var squir5_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir6={
 type:"single-stim",
@@ -617,7 +616,7 @@ stimulus:"img/squir6.jpg",
 };
 var squir6_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir7={
 type:"single-stim",
@@ -625,7 +624,7 @@ stimulus:"img/squir7.jpg",
 };
 var squir7_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir8={
 type:"single-stim",
@@ -633,7 +632,7 @@ stimulus:"img/squir8.jpg",
 };
 var squir8_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir9={
 type:"single-stim",
@@ -641,7 +640,7 @@ stimulus:"img/squir9.jpg",
 };
 var squir9_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir10={
 type:"single-stim",
@@ -649,110 +648,111 @@ stimulus:"img/squir10.jpg",
 };
 var squir10_response={
 type:"survey-text",
-questions:["<p class='stimuli'>En quoi <b>se transforme</b> cette image? Si vous <b>n’êtes pas sûr</b> à ce stade, ou si votre réponse est <b>la même</b> que pour <b>l’image précédente</b>, laisser la case <b>vide</b> et cliquez sur « submit answers ».</p>",],
+questions:["<p class='stimuli'><b>What do you think this image is turning into?</b> If you are unsure at this stage, or if your answer is the <b>same</b> as it was for the <b>previous</b> image, please leave the box <b>blank</b> and click 'submit answers'.</p>",],
 };
 var squir_answer={
 type:"text",
-text:"<p class='stimuli'>Appuyez sur la touche <b>espace</b> pour découvrir la nature de l’image finale de cette série.</p>"+
-"<p class='stimuli'>Ensuite, appuyez encore sur la touche <b>espace</b> pour commencer la fin de l'épreuve.</p>"
+text:"<p class='stimuli'>Please press <b>SPACE</b> to find out the identity of the final image in this picture set.</p>"+
+"<p class = 'stimuli'>Afterwards, press <b>SPACE</b> again to continue to the end of the experiment.</p>",
 };
 var squir11={
 type:"single-stim",
-stimulus:"img/squir11FR.jpg",
+stimulus:"img/squir11.jpg",
 };
 var endofexperiment2={
 type:"text",
-text:"<p class='stimuli'>Vous avez atteint la fin de l’expérience.</p>"+ 
-"<p class='stimuli'>Lorsque vous êtes prêt, appuyez sur la touche <b>espace</b> pour accéder au <b>questionnaire final</b>.</p>"
-};
+text:"<p class='stimuli'>You have reached the end of the experiment.</p>"+
+"<p class='stimuli'>When you are ready, please press any key to move on to a final short questionnare.</p>",
+ };
  var questionnaire1={
   type:"survey-multi-choice",
   horizontal: true,
-  questions:["<p class='stimuli'>Quelle <b>variété d’anglais</b> parlez-vous? </p>",],
-  options:[["<p class='stimuli2'>Anglais Britannique</p>", "<p class='stimuli2'>Anglais Américain</p>", "<p class='stimuli2'>Anglais Australien</p>","<p class='stimuli2'>Anglais Indien</p>","<p class='stimuli2'>Autre</p>",]],
+  questions:["<p class='stimuli'>Which <b>variety of English</b> do you speak? </p>",],
+  options:[["<p class='stimuli2'>British English</p>", "<p class='stimuli2'>American English</p>", "<p class='stimuli2'>Australian English</p>","<p class='stimuli2'>Indian English</p>","<p class='stimuli2'>Other</p>",]],
   };
  var questionnaire2={
  type: "survey-text",
- questions:["<p class='stimuli'>Parlez-vous <b>d’autres langues</b> que l’anglais ou le français? Si non, écrivez <b>‘non’</b>. Si oui, <b>faites une liste</b> et donnez leur une <b>note</b> entre 1 et 5, <b>1</b> étant <b>niveau bas</b>, <b>3 niveau compétent</b> et <b>5 haut niveau</b>. (Ex. l'espagnol = 2, l'allemand = 3).</p>",],
+ questions:["<p class='stimuli'>Do you speak any <b>other languages</b> apart from English and French? If <b>no</b>, please write <b>'no'</b>. If <b>yes</b>, please <b>list</b> these languages and rate your <b>proficiency</b> in <b>each one</b>, on a scale of 1 to 5 - <b>1</b> being <b>'low'</b>, <b>3</b> being 'competent', and <b>5</b> being <b>'high'</b>. (e.g. Spanish = 2, German = 1).</p>",],
  };
 var questionnaire3={
 type:"survey-multi-choice",
 horizontal: true,
-questions:["<p class='stimuli'>Quand avez-vous commencé à apprendre <b>le français?</b></p>",],
-options:[["<p class='stimuli2'>Depuis la naissance</p>", "<p class='stimuli2'>en primaire</p>", "<p class='stimuli2'>au collège</p>", "<p class='stimuli2'>plus tard</p>",]],
+questions:["<p class='stimuli'>When did you start learning <b>French</b>?</p>",],
+options:[["<p class='stimuli2'>From birth</p>", "<p class='stimuli2'>In primary school</p>", "<p class='stimuli2'>In secondary school</p>", "<p class='stimuli2'>Later</p>",]],
 };
 var questionnaire4={
 type:"survey-multi-choice",
 horizontal:true,
-questions:["<p class='stimuli'>Quelle <b>note</b> donneriez-vous à votre <b>niveau</b> de <b>français</b>?</p>",],
-options:[["<p class='stimuli2'>1 (niveau bas)</p>","<p class='stimuli2'>2</p>","<p class='stimuli2'>3 (niveau compétent)</p>","<p class='stimuli2'>4</p>","<p class='stimuli2'>5 (haut niveau)</p>",]],
+questions:["<p class='stimuli'>How would you rate your <b>proficiency</b> in <b>French</b>?</p>",],
+options:[["<p class='stimuli2'>1 (low)</p>","<p class='stimuli2'>2</p>","<p class='stimuli2'>3 (competent)</p>","<p class='stimuli2'>4</p>","<p class='stimuli2'>5 (high)</p>",]],
 };
 var questionnaire5={
 type:"survey-multi-choice",
-questions:["<p class='stimuli'>Avez-vous eu des <b>cours particuliers</b> de <b>français</b>, par exemple à la maison ou en cours additionnels?</p>",],
-options:[["<p class='stimuli2'>Oui</p>","<p class='stimuli2'>Non</p>",]],
+questions:["<p class='stimuli'>Have you had any language teaching in French <b>outside</b> of school/university, e.g. at home or extracurricular classes?</p>",],
+options:[["<p class='stimuli2'>Yes</p>","<p class='stimuli2'>No</p>",]],
 };
 var questionnaire6={
 type:"survey-multi-choice",
-questions:["<p class='stimuli'>A <b>quelle fréquence</b> êtes-vous exposé au <b>français</b> (écoute ou lecture)?</p>",],
-options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
+questions:["<p class='stimuli'>How <b>frequently</b> are you <b>exposed</b> to French (hearing or reading)?</p>",],
+options:[["<p class='stimuli2'>Never</p>","<p class='stimuli2'>Rarely</p>","<p class='stimuli2'>Sometimes</p>","<p class='stimuli2'>Often</p>","<p class='stimuli2'>Very frequently</p>",]],
 };
 var questionnaire7={
 type:"survey-multi-choice",
-questions:["<p class='stimuli'>A <b>quelle fréquence</b> utilisez-vous <b>le français</b> (parlé ou écrit)?</p>",],
-options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
+questions:["<p class='stimuli'>How <b>frequently</b> do you <b>use</b> French (speaking or writing)?</p>",],
+options:[["<p class='stimuli2'>Never</p>","<p class='stimuli2'>Rarely</p>","<p class='stimuli2'>Sometimes</p>","<p class='stimuli2'>Often</p>","<p class='stimuli2'>Very frequently</p>",]],
 };
 var questionnaire8={
  type: "survey-multi-choice",
  horizontal: true,
- questions:["<p class='stimuli'>A quelle <b>tranche d’âge</b> appartenez-vous? </p>",],
- options:[["<p class='stimuli2'>Moins de 18</p>","<p class='stimuli2'>18-25</p>","<p class='stimuli2'>26-30</p>","<p class='stimuli2'>31-35</p>","<p class='stimuli2'>36+</p>",]],
+ questions:["<p class='stimuli'>To which <b>age band</b> do you belong?</p>",],
+ options:[["<p class='stimuli2'>Under 18</p>","<p class='stimuli2'>18-25</p>","<p class='stimuli2'>26-30</p>","<p class='stimuli2'>31-35</p>","<p class='stimuli2'>36+</p>",]],
  };
 var questionnaire9={
 type:"survey-multi-choice",
 horizontal:true,
-questions:["<p class='stimuli'>En quelle <b>année d’université</b> êtes-vous?</p>",],
-options:[["<p class'stimuli2'>Première année de licence</p>","<p class='stimuli2'>Deuxième année de licence</p>","<p class='stimuli2'>Troisième année de licence</p>","<p class='stimuli2'>Quatrième année de licence</p>", "<p class='stimuli2'>Etudiant en master</p>","<p class='stimuli2'>Etudiant en PhD</p>","<p class='stimuli2'>Diplômé de licence</p>","<p class='stimuli2'>Diplômé de master</p>","<p class='stimuli2'>Diplômé de PhD</p>",]]
-};
+questions:["<p class='stimuli'>What <b>year</b> of <b>university</b> are you in?</p>",],
+ options:[["<p class='stimuli2'>Completed undergraduate degree</p>","<p class='stimuli2'>Completed masters</p>","<p class='stimuli2'>Completed PhD</p>","<p class='stimuli2'>First year undergraduate</p>","<p class='stimuli2'>Second year undergraduate</p>","<p class='stimuli2'>Third year undergraduate</p>","<p class='stimuli2'>Fourth year undergraduate</p>","<p class='stimuli2'>Studying for Masters</p>","<p class='stimuli2'>Studying for PhD</p>","<p class='stimuli2'>Other</p>",]],
+ };
  var questionnaire10={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>Comment qualifier votre <b>vision</b>? </p>",],
- options:[["<p class='stimuli2'>Normale</p>","<p class='stimuli2'>Corrigée (porteur de lunettes)</p>","<p class='stimuli2'>Problèmes de vision</p>",]],
+ questions:["<p class='stimuli'>How would you rate your <b>vision</b>?</p>",],
+ options:[["<p class='stimuli2'>Normal</p>","<p class='stimuli2'>Corrected-to-normal(wear glasses)</p>","<p class='stimuli2'>Some problems with vision</p>",]],
  };
  var questionnaire11={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>Quel est votre <b>sexe</b>? </p>"],
- options:[["<p class='stimuli2'>Masculin</p>","<p class='stimuli2'>Féminin</p>","<p class='stimuli2'>Autre</p>",]],
+  questions:["<p class='stimuli'>What is your <b>sex</b>?</p>",],
+ options:[["<p class='stimuli2'>Male</p>","<p class='stimuli2'>Female</p>","<p class='stimuli2'>Other</p>",]],
  };
  var questionnaire12={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>Etes-vous <b>droitier</b> ou <b>gaucher</b>?</p>",],
- options:[["<p class'stimuli2'>Droitier</p>","<p class='stimuli2'>Gaucher</p>","<p class='stimuli2'>Ambidextre</p>",]],
- };
+  questions:["<p class='stimuli'>Are you <b>left</b> or <b>right handed</b>?</p>",],
+ options:[["<p class='stimuli2'>Left</p>","<p class='stimuli2'> Right </p>", "<p class='stimuli2'>Ambidextrous</p>",]],
+ }
  var questionnaire13={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>Jouez-vous d’un <b>instrument de musique</b>?</p>",],
- options:[["<p class='stimuli2'>Oui</p>","<p class='stimuli2'>Non</p>",]],
+ questions:["<p class='stimuli'>Do you play a <b>musical instrument</b>?</p>",],
+ options:[["<p class='stimuli2'>Yes</p>","<p class='stimuli2'>No</p>",]],
  };
  var questionnaire14={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>A <b>quelle fréquence</b> jouez-vous aux <b>jeux vidéo?</b></p>",],
- options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
+questions:["<p class='stimuli'>How <b>often</b> do you play <b>video games</b>?</p>",],
+ options:[["<p class='stimuli2'>Never</p>","<p class='stimuli2'>Rarely</p>","<p class='stimuli2'>Sometimes</p>","<p class='stimuli2'>Often</p>","<p class='stimuli2'>Very often</p>",]],
  };
  var questionnaire15={
  type:"survey-multi-choice",
  horizontal:true,
- questions:["<p class='stimuli'>A <b>quelle fréquence</b> faites-vous de <b>l’exercice physique</b>? </p>",],
-options:[["<p class='stimuli2'>Jamais</p>","<p class='stimuli2'>Rarement</p>","<p class='stimuli2'>Parfois</p>","<p class='stimuli2'>Souvent</p>","<p class='stimuli2'>Très souvent</p>",]],
+  questions:["<p class=stimuli>How <b>often</b> do you take part in <b>sustained exercise</b>?</p>",],
+ options:[["<p class='stimuli2'>Never</p>","<p class='stimuli2'>Rarely</p>","<p class='stimuli2'>Sometimes</p>","<p class='stimuli2'>Often</p>","<p class='stimuli2'>Very often</p>",]],
  };
  var endofexperiment3={
  type:"text",
- text:"<p class='stimuli'>C’est la fin de l’épreuve. Merci beaucoup pour votre participation. Appuyez sur la touche <b>espace</b> pour finir.</p>",
+  text:"<p class='stimuli'>This is the end of the experiment. Thank you very much for taking part.</p>"+
+ "<p class='stimuli2'>Please press <b>space</b> to finish.</p>",
  }; 
 
 var timeline=[];
