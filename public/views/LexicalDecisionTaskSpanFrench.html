@@ -39,6 +39,21 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+  var consent={
+  type: "text",
+  text: "<p class='stimuli'>If you wish and agree to participate in this linguistics study, you will be asked to complete two short tasks, involving reaction time (in French) and picture selection (in English), followed by a short questionnaire. The total time to complete the study is estimated to be 15 minutes.</p>"+
+  "<p class='stimuli'> By completing the study, you will have the chance to win one of three 20 pound book tokens.</p>"+
+  "<p class='stimuli'> Participation in this study is voluntary. You may discontinue at any time for any reason, but a book token can only be won by completing the whole study.</p>"+
+  "<p class='stimuli'>Each participant's documented consent to participate and corresponding data will remain confidential.</p>"+
+  "<p class='stimuli2'>Please press SPACE to continue</p>"
+  };
+  var consent2={
+  type:"survey-multi-choice",
+  horizontal:true,
+  questions:["<p class='stimuli'>Do you consent to taking part in this study?</p>",],
+  options:[["<p class='stimuli2'> yes</p>", "<p class='stimuli2'>no</p>",]],
+  };
 var welcome_block={
 type:"survey-text",
 questions:["<p class='stimuli'>Bienvenue.</p>"+
@@ -771,6 +786,8 @@ questions:["<p class='stimuli'>How <b>often</b> do you play <b>video games</b>?<
 
 
 var timeline=[];
+timeline.push(consent);
+timeline.push(consent2);
 timeline.push(welcome_block);
 timeline.push(welcome_block2);
 timeline.push(instructions_block1);
